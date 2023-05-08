@@ -43,32 +43,48 @@ function mostrarVentas(){
     });
 }
 
-function guardarVenta(){
-    let nombre_empleado = document.getElementById('empleado').value;
-    let nombre_cliente = document.getElementById('cliente').value;
-    let nombre_producto = document.getElementById('producto').value;
-    let precio = document.getElementById('precio').value;
-    let fecha_compra = document.getElementById('fecha').value;
-
-    let venta = {
-        nombre_empleado: nombre_empleado,
-        nombre_cliente: nombre_cliente,
-        nombre_producto: nombre_producto,
-        precio: precio,
-        fecha_compra: fecha_compra
-    };
-
+function guardarVenta() {
+    let form = document.getElementById('formulario');
+    let formData = new FormData(form);
+  
     fetch('http://127.0.0.1:8000/api/sales', {
-        method: 'POST',
-        body: JSON.stringify(venta),
-        headers: {
-            'Content-Type': 'application/json'
-        }
+      method: 'POST',
+      body: formData
     })
     .then(response => response.json())
-    ,then(data => {
-        console.log(data);
-        mostrarVentas();
-        window.location.reload();
-    })
-}
+    .then(data => {
+      console.log(data);
+      mostrarVentas();
+      window.location.reload();
+    });
+    alert("Venta creada satisfactorimaente");
+  }
+// function guardarVenta(){
+//     let nombre_empleado = document.getElementById('empleado').value;
+//     let nombre_cliente = document.getElementById('cliente').value;
+//     let nombre_producto = document.getElementById('producto').value;
+//     let precio = document.getElementById('precio').value;
+//     let fecha_compra = document.getElementById('fecha').value;
+
+//     let venta = {
+//         nombre_empleado: nombre_empleado,
+//         nombre_cliente: nombre_cliente,
+//         nombre_producto: nombre_producto,
+//         precio: precio,
+//         fecha_compra: fecha_compra
+//     };
+
+//     fetch('http://127.0.0.1:8000/api/sales', {
+//         method: 'POST',
+//         body: JSON.stringify(venta),
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log(data);
+//         mostrarVentas();
+//         window.location.reload();
+//     })
+// }
