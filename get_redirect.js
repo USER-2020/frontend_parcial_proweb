@@ -1,6 +1,6 @@
 function eliminarVenta(id) {
     id=parseInt(id);
-    let endPoint = '' + id;
+    let endPoint = 'http://127.0.0.1:8000/api/sales/delete/' + id;
     fetch(endPoint, {
         method: 'DELETE'
     })
@@ -14,7 +14,7 @@ function eliminarVenta(id) {
 
 function mostrarVentas(){
     let sales = document.getElementById("ventas");
-    let endPoint = '';
+    let endPoint = 'http://127.0.0.1:8000/api/sales';
     sales.innerHTML = '';
     fetch(endPoint)
     .then(response => response.json())
@@ -25,15 +25,15 @@ function mostrarVentas(){
                         <br>
                         <td><b>Identificador: </b> ${element.id}</td>
                         <br>
-                        <td><b>Nombre del Vendedor: </b> ${element.}</td>
+                        <td><b>Nombre del Vendedor: </b> ${element.nombre_empleado}</td>
                         <br>
-                        <td><b>Nombre del Cliente: </b> ${element.}</td>
+                        <td><b>Nombre del Cliente: </b> ${element.nombre_cliente}</td>
                         <br>
-                        <td><b>Nombre del Producto: </b> ${element.}</td>
+                        <td><b>Nombre del Producto: </b> ${element.nombre_producto}</td>
                         <br>
-                        <td><b>Precio: </b> ${element.}</td>
+                        <td><b>Precio: </b> ${element.precio}</td>
                         <br>
-                        <td><b>Fecha Compra: </b> ${element.}</td>
+                        <td><b>Fecha Compra: </b> ${element.fecha_compra}</td>
                         <br>
                         <td><button class="btn deep-orange darken-2" type="submit" onclick="eliminarVenta(${element.id})">Eliminar</button></td>
                         <br>
