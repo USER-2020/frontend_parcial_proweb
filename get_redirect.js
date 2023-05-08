@@ -59,12 +59,29 @@ function guardarVenta() {
     });
     alert("Venta creada satisfactorimaente");
   }
-// function guardarVenta(){
-//     let nombre_empleado = document.getElementById('empleado').value;
-//     let nombre_cliente = document.getElementById('cliente').value;
-//     let nombre_producto = document.getElementById('producto').value;
-//     let precio = document.getElementById('precio').value;
-//     let fecha_compra = document.getElementById('fecha').value;
+
+// const formulario = document.querySelector('#formulario');
+
+// formulario.addEventListener('submit', (e) => {
+//   e.preventDefault();
+//   guardarVenta(e);
+// });
+
+// function guardarVenta(e){
+//     console.log("Estoy adentro de la funcion ")
+//     e.preventDefault();
+//     let nombre_empleado = document.getElementById("empleado").value;
+//     console.log(nombre_empleado);
+//     let nombre_cliente = document.getElementById("cliente").value;
+//     console.log(nombre_cliente);
+//     let nombre_producto = document.getElementById("producto").value;
+//     console.log(nombre_producto);
+//     let precio = document.getElementById("precio").value;
+//     console.log(precio);
+//     let fecha_compra = document.getElementById("fecha").value;
+//     console.log(fecha_compra);
+
+//     console.log("Por aca voy cogiendo los datos ");
 
 //     let venta = {
 //         nombre_empleado: nombre_empleado,
@@ -78,8 +95,11 @@ function guardarVenta() {
 //         method: 'POST',
 //         body: JSON.stringify(venta),
 //         headers: {
-//             'Content-Type': 'application/json'
+//             'Content-Type': 'application/json',
+//             'Accept': 'application/json',
+//             'X-Requested-With': 'XMLHttpRequest'
 //         }
+        
 //     })
 //     .then(response => response.json())
 //     .then(data => {
