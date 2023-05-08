@@ -58,6 +58,7 @@ function guardarVenta() {
       window.location.reload();
     });
     alert("Venta creada satisfactorimaente");
+    console.log(data);
   }
 
 // const formulario = document.querySelector('#formulario');
