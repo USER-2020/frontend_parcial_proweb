@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Front Parcial 2</title>
+</head>
+<body onload="mostrarVentas()">
+    <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title center">Este formulario registra una nueva venta</span>
+            </div>
+            <div class="card-action">
+                <div class="row center">
+                    <div class="col s12">
+                        <form id="formulario">
+                        <input type="text" name="empleado" placeholder="Nombre del Empleado" id="empleado">
+                        <input type="text" name="cliente" placeholder="Nombre del Cliente" id="cliente">
+                        <input type="text" name="producto" placeholder="Nombre del Producto" id="producto">
+                        <input type="number" name="precio" placeholder="Precio del Producto" id="precio">
+                        <input type="date" name="fecha" id="fecha" placeholder="Fecha de la Compra">
+                        <button type="submit" class="waves-effect waves-light btn-large">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="col s12 m6" id="ventas">
+        </div>
+    </div>
+    <script src="get_redirect.js"></script>
+    <script src="post.js"></script>
+</body>
+</html>
